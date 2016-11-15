@@ -1,0 +1,62 @@
+Attendence table
+create table attendence( eid varchar(20) references employee(eid), date_of_day  date , time_of_entrance time , time_of_exit time, present_absent varcahr(20));
+
+*Add contraint that date of attendence should not previous date
+alter table attendence add constraint check_date check(date_of_day = current_date());
+
+*check how many hours employee work
+select a.time_of_exit - a.time_of_entrance as diff,first_name from attendence a inner join employee e on a.emp_id=e.emp_id;
+
+* time_of_exit  should be greater than time_of_entrance
+alter table attendence add constraint check_con check(time_of_exit > time_of_entrance);
+when try to perform insert
+hrms1=# insert into attendence values('TRAIN003','2016-12-15','10:20:00','10:10:00','absent');
+ERROR:  new row for relation "attendence" violates check constraint "check_con"
+DETAIL:  Failing row contains (TRAIN003, 2016-12-15, 10:20:00, 10:10:00, absent).
+
+*inner join operation
+select a.time_of_exit - a.time_of_entrance as diff,first_name from attendence a inner join employee e on a.emp_id=e.emp_id and first_name='Anand';
+   diff   | first_name 
+----------+------------
+ 00:13:00 | Anand
+(1 row)
+
+alter table attendence drop column present_absent;
+alter table attendence  add column present_absent;
+alter table tablename rename to newname;
+alter table tablename alter column columnname TYPE newcolumnname;
+
+
+copy column from one table to another
+update currenttablename set columnname=othertablename.columnname from othertablename where currenttablenaem.pid=othertablename.pid;
+
+
+Employee table
+emp_id varchar pk
+first_name not null
+last_name not null
+joining_date date 
+email id unique
+contactno unique
+dept_id fk
+emp_address 
+id_proof_no unique
+
+
+Department
+Dept_id pk
+dept_name 
+emp_qualification
+emp_id fk
+highschool_per
+intermediate_per
+grauadion_course
+graduation_per
+passing_year int
+any other course specify.
+
+
+
+
+
+ 
