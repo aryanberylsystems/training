@@ -1,0 +1,156 @@
+﻿
+http://www.java2s.com/Code/PostgreSQL/Table-Joins/INNER-JOIN.htm
+
+
+\! clear -clear screen
+create database newdb with template originaldb;
+
+create unique index email_unique_index on employee(lower(email_id));
+ 
+
+select table2.emp_id, d.dept_name from (select table1.emp_id,e.dept_id from (select emp_id from attendence where present_absent='Present') as table1 inner join employee e on table1.emp_id=e.emp_id) as table2 inner join department d on d.dept_id=table2.dept_id;
+  emp_id  |  dept_name  
+----------+-------------
+ TRAIN001 | Development
+ TRAIN002 | Development
+(2 rows)
+
+ 
+
+select table1.emp_id,e.dept_id from (select emp_id from attendence where present_absent='Present') as table1 inner join employee e on table1.emp_id=e.emp_id;
+  emp_id  | dept_id 
+----------+---------
+ TRAIN001 | DEV001
+ TRAIN002 | DEV001
+
+
+alter table employee add constraint contact_constraint CHECK (contactno>999999999 AND contactno<=9999999999);
+
+insert into employee values('TRAIN006','ABC', 'EFG', '2016-12-30', 'ajshjhas@jkdj.com', 'Tecg01',12345,'hgfghfghf','2231hj');
+ERROR:  new row for relation "employee" violates check constraint "contact_constraint"
+DETAIL:  Failing row contains (TRAIN006, ABC, EFG, 2016-12-30, ajshjhas@jkdj.com, Tecg01, 12345, hgfghfghf, 2231hj).
+
+
+select e.first_name,count (a.emp_id) as how_much_attendence from attendence a inner join employee e on  e.emp_id=a.emp_id and extract(month from a.date_of_day )=11 and a.emp_id='TRAIN001'group by first_name; 
+ first_name | how_much_attendence 
+------------+---------------------
+ Aryan      |                   1
+(1 row)
+
+
+
+select extract(day from date_of_day) as da from attendence ;
+ da 
+----
+ 15
+ 15
+ 15
+(3 rows)
+
+
+select extract(year from date_of_day) as da from attendence ;
+  da  
+------
+ 2016
+ 2016
+ 2016
+(3 rows)
+
+
+
+select extract(month from date_of_day) from attendence ;
+ date_part 
+-----------
+        11
+        11
+        11
+(3 rows)
+
+
+
+select count (emp_id ) as total_attendence  from attendence where emp_id='TRAIN001' and extract(month from date_of_day)=11;
+ total_attendence 
+------------------
+                2
+(1 row)
+
+
+
+postgres=# ALTER TABLE employee ALTER COLUMN name SET NOT NULL;
+ALTER TABLE
+postgres=#
+postgres=# \d employee;
+            Table "public.employee"
+   Column   |         Type          | Modifiers
+------------+-----------------------+-----------
+ id         | integer               |
+ name       | character varying(10) | not null
+ salary     | real                  |
+ start_date | date                  |
+ city       | character varying(10) |
+ region     | character(1)          |
+
+
+
+
+
+hrms1=# select q.passing_year,d.dept_name from emp_qualification q inner join employee e on q.emp_id=e.emp_id inner join department d on d.dept_id=e.dept_id and q.passing_year=2014;
+ passing_year |  dept_name  
+--------------+-------------
+         2014 | Development
+(1 row)
+
+
+select first_name,count(emp_id) as totaljoined from employee where joining_date between '2015-01-01' and '2016-11-16' group by first_name;
+ first_name | totaljoined 
+------------+-------------
+ shilpa     |           1
+ Garima     |           1
+ sumit      |           1
+ sishpal    |           1
+ Aman       |           1
+ prashant   |           1
+ Irshada    |           1
+ Aryan      |           1
+ Anand      |           1
+(9 rows)
+
+
+
+
+hrms1=# select count(emp_id) as totaljoined from employee where joining_date between '2015-01-01' and '2016-11-16';
+ totaljoined 
+-------------
+           9
+(1 row)
+
+
+or
+
+hrms1=# select count(emp_id) as totaljoined from employee where extract(year from joining_date) IN(2016);
+ totaljoined 
+-------------
+           7
+(1 row)
+
+
+
+hrms1=# select count(emp_id) as totalattendence from attendence where extract(month from date_of_day) IN(11) and emp_id='TRAIN001';
+ totalattendence 
+-----------------
+               5
+(1 row)
+
+hrms1=# select e.first_name,count(a.emp_id) as total_attendence from attendence a inner join employee e on e.emp_id=a.emp_id and extract(month from a.date_of_day) IN(11) and a.emp_id='TRAIN001' group by e.first_name;
+ first_name | total_attendence 
+------------+------------------
+ Aryan      |                5
+(1 row)
+
+
+hrms1=# select d.dept_name,a.date_of_day,e.first_name from employee e inner join attendence a on e.emp_id=a.emp_id inner join department d on d.dept_id=e.dept_id and a.date_of_day='2016-11-16'; 
+  dept_name  | date_of_day | first_name 
+-------------+-------------+------------
+ Development | 2016-11-16  | Aryan
+(1 row)
+
