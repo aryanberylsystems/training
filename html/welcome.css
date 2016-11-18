@@ -1,0 +1,21 @@
+
+.div_table {
+    background-color: darkgrey;
+    margin: 100px 251px 100px 350px;
+}
+.div_main {
+    background-image: url("img1.jpeg");
+    margin: auto;
+}
+input.emp_details {
+    height: 5em;
+}
+input.qualification {
+    height: 5em;
+}
+input.dept {
+    height: 5em;
+}
+input.attendance {
+    height: 5em;
+}
