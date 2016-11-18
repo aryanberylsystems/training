@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<title>employee datail page</title>
+	<!-- code for datepicker-->
+	
+	<link rel="stylesheet" href="emp_details.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+	 <script src="emp_details.js"></script> 
+	
+</head>
+<body>
+	<div class="main">
+	<div class="div_head" >
+		<header>
+			
+		</header>
+		
+    </div>
+	<div class="div_form_container">
+		<center><h2>
+				<center> <i><pre>Employee Details</pre></i></center>
+			</h2>
+		<form name="emp_details" action="" metohd="post" onsubmit="return (validateform())">
+			<div class="left">
+				<i>employee_id </i>
+			</div>
+			<div class="right" >
+				<input type ="text" name="emp_id" placeholder="enter employee id" />
+			</div>
+			<br/>
+			<div class="left">
+				<i>first_Name </i>
+			</div>
+			<div class="right">
+				<input  type ="text" name ="first_name" placeholder="enter first name">
+			</div>
+			<br/>
+			
+			<div class="left"><i>last_name </i>
+			</div>
+			<div class="right">
+				<input type ="text" name="last_name" placeholder="enter last name" >
+			</div>
+			<br/>
+			<div class="left">
+				<i>male </i>
+			</div>
+			<div class="right">	
+				<input type ="radio" name="gender" >
+			</div>
+			
+			<div class="left">
+				<i>female </i>
+			</div>
+			<div class="right">	<input type ="radio" name="gender">
+			</div>
+			<br/>
+			<div class="left">
+				<i>joining_date </i>
+			</div>
+			<div class="right">	
+				<input id="datepicker" name ="joining_date">
+			</div>
+			<br/>
+			<div class="left">
+				<i>email_id </i>
+			</div>
+			<div class="right">
+				<input type ="email" name ="email_id" placeholder="enter email id" >
+			</div>
+			<br/>
+			<div class="left">
+				<i>contact_no </i>
+			</div>
+			<div class="right">
+				<input type ="number" name ="contact_no" placeholder="enter contact no.">
+			</div>
+			<br/>
+			<div class="left">
+				<i>department_id </i>
+			</div>
+			<div class="right">
+				<input type ="text" name ="dept_id" placeholder="enter dept id.">
+			</div>
+			<br/>
+			<div class="left">
+				<i>emp_address  </i>
+			</div>
+			<div class="right">
+					<textarea name ="emp_address" placeholder="enter address"></textarea>
+			</div>
+			<br/>
+			<div class="left">
+				<i>id type </i>
+			</div>
+			<div class="right">
+				<select  >
+   			 <option value="" disabled="disabled" selected="selected">select id type</option>
+    		 <option value="1">Aadhaar card</option>
+    	     <option value="2">voter id</option>
+			 <option value="3">Driving License</option>
+			   </select>
+			</div>
+				<br/>
+			<div class="left">
+				<i>id_proof_no</i>
+			</div>
+			<div class="right">	
+				<input type ="email" name ="" placeholder="enter id proof no.">
+			</div>
+			<br/>
+			<div class="right">
+				<input class="btn_save" type="button" value="save "/>
+		    </div>
+		</form>
+		</center>
+	</div>
+	<div id="div_footer">
+		<footer>
+			<center>&copy;beryl team</center>
+		</footer>
+	</div>
+	</div>	
+</body>
+</html>

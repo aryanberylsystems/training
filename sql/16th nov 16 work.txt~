@@ -154,17 +154,3 @@ hrms1=# select d.dept_name,a.date_of_day,e.first_name from employee e inner join
  Development | 2016-11-16  | Aryan
 (1 row)
 
-
-hrms1=# select count(a.present_absent) as no_of_presence from attendence a inner join employee e on e.emp_id=a.emp_id and e.emp_id='TRAIN001' and a.date_of_day between e.joining_date and current_date; 
- no_of_presence 
-----------------
-              6
-(1 row)
-
-
-
-
-
-
-
-

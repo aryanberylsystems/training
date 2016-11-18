@@ -1,0 +1,60 @@
+Removing primary key constraint
+ALTER TABLE <table_name> DROP CONSTRAINT <table_name>_pkey;
+
+
+~$ sudo apt-get install pgadmin3
+
+
+berylsystems@berylsystems-System-Product-Name:~$ sudo -u postgres psql postgres
+[sudo] password for berylsystems: 
+psql (9.4.5)
+Type "help" for help.
+
+postgres=# \password postgres
+Enter new password: 
+Enter it again: 
+postgres=# 
+
+this all are installing steps for pgadmin..
+
+and learn about using it..
+
+note-
+to change datatype from varchar to decimal
+
+ alter table emp_qualification alter column highschool_per TYPE decimal using(highschool_per::decimal);
+
+/// to count employee come after 9.30.00 in last month
+hrms1=# select e.first_name, count(a.emp_id) from employee e inner join attendence a on e.emp_id=a.emp_id and time_of_entrance>'09:30:00' and date_of_day > '2016-10-17' group by e.first_name;
+ first_name | count 
+------------+-------
+ Aman       |     2
+ Aryan      |     5
+ Anand      |     4
+(3 rows)
+
+/// count no of employee department wise 
+hrms1=# select d.dept_name,count(e.emp_id) as total_emp from employee e inner join department d on e.dept_id=d.dept_id group by d.dept_name;
+  dept_name  | total_emp 
+-------------+-----------
+ Testing     |         4
+ Development |         6
+(2 rows)
+
+these are some queries givien by sir.
+learn about drop primary key constraint..
+alter table employee drop constraint employee_pkey;
+
+and learn about how to insrt data ,create table and perform different operation on table using pgadmin..
+
+
+
+
+
+
+
+
+
+ 
+
+

@@ -56,6 +56,9 @@ passing_year int
 any other course specify.
 
 
+need to check to add constraint on absent
+hrms1=# alter table attendence add constraint con_present_absent check( case when present_absent='absent' then  time_of_entrance=null and time_of_exit=null end);
+
 
 
 
