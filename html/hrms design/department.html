@@ -1,8 +1,77 @@
 <!doctype html>
 <html>
 <head>
-<body>
-	<h2>page under construction...</h2>
-</body>
+	<link rel="stylesheet" type="text/css" href="department.css">
+	<script src="department.js">
+// function validateForm() {
+//     var x = document.forms["dept_table"]["dept_id"].value;
+//     if (x == "") {
+//         alert("Name must be filled out");
+//         return false;
+//     }
+// }
+</script>
 </head>
+<body>
+	<div class="header-home">
+		<div class="login_link">
+			<a href="hr_login.html">Login</a>
+			<a href="contactus.html">/&nbsp;contactus</a>
+		</div>
+	</div>
+	<div class="main">
+	<table>
+
+		<form action="" name="dept_table" method="post" onsubmit="return validateForm()">
+		<tr>
+			<td colspan="2"> 
+				<i>Enter dept_id and dept_name</i>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+			<div class="left">
+				<i><pre>Department id</pre></i> 
+			</div>
+			</td>
+			<td>
+			<div class="right">	
+				<input type="text" name="dept_id"/>	
+			</div>	
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div class="left">
+				<i><pre>Department name</pre></i>
+			</div>
+			</td>
+			<td>
+			<div class="right">
+			<select  id="dept_select">
+   			 <option value="" disabled="disabled" selected="selected">select department</option>
+    		 <option value="1">RoR Developer</option>
+    	     <option value="2">Android Developer</option>
+			 <option value="3">IOS Developer</option>
+			 <option value="4">Testing</option>
+			   </select>	
+			 </div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			    <div class="right">	
+				<input class="btn_for_dept_save"  type="submit" value="save"/>
+				<input class="btn_for_dept_reset"type="submit" value="Reset"/>
+				</div>
+			</td>
+		</tr>
+		</form>
+	</table>
+	</div>
+		<footer><center>&copy;beryl</center></footer>
+</body>
+
 </html>

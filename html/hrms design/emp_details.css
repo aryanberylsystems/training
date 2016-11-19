@@ -1,13 +1,15 @@
 .main
 {
-  background-image: url('img2.jpeg')
+/*   background-image: url('img2.jpeg')
+    */
+  background-color: darkgrey;
 }
 .div_head
 {
   
    
     height: 150px;
-    background-image: url('img2.jpeg') ; 
+    background-image: url('blue.png') ; 
    // background-repeat: no-repeat;
 
 }
@@ -16,24 +18,24 @@
 .div_form_container
 {
   background-color: lightgray;
-  margin: 100px 25px 40px 250px;
+  margin: 1px 25px 40px 250px;
   overflow: auto;
   width: 70%;
   min-height: 630px;
 }
 .left
 {
-	margin-left: -800px;
+  margin-left: -800px;
    margin-top: 20px;
-	
-	
+  
+  
 }
 .right
 {
   margin-left: -150px;
   margin-top: -20px;
   
-	
+  
 }
 input.btn_save
 {

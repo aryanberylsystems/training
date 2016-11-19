@@ -1,0 +1,19 @@
+.qua_header
+{
+	margin-top: -100px;
+	width: 1550px;
+	 height: 250px;
+	
+    background-image: url('blue.png') ; 
+	position: fixed;
+}
+
+i{
+	color: white;
+	
+}
+.header_text
+{
+	margin-top: 175px;
+
+}

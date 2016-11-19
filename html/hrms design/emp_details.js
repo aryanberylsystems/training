@@ -1,7 +1,8 @@
-function validateForm() {
-    var x = document.emp_details.first_name.value;
-    if (x == "") {
-        alert("Name must be filled out");
+function validate_form() {
+    var x = document.forms["emp_record"]["emp_id"].value;
+     if (x == "") {
+        alert("Please provide department id..");
         return false;
     }
+    
 }

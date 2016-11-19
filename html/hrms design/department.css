@@ -1,0 +1,54 @@
+.header-home
+{ 
+	height:160px;
+	width: 1550px;
+	background: url('img4.jpg');
+	 background-size: 100% 100%;
+
+	
+}
+a
+{
+
+	color: white;
+	
+}
+.login_link
+{
+	text-align:  right;
+	margin-right: 100px;
+	
+
+}
+.left
+{
+	margin-left:00px;
+   margin-top: 20px;
+	
+	
+}
+.right
+{
+  margin-left: 100px;
+  margin-top: -1px;
+  
+	
+}
+.main
+{
+	background-color: white;
+  margin: 100px 25px 40px 250px;
+  overflow: auto;
+  width: 70%;
+  min-height: 630px;
+}
+input.btn_for_dept_save
+{
+	height: 3em;
+	width: 5em;
+}
+input.btn_for_dept_reset
+{
+	height: 3em;
+	width: 5em;
+}
