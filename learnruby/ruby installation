@@ -1,0 +1,24 @@
+To install rvm run following command
+ https://rvm.io/rvm/install
+ i use
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+After this two ommands 
+right click on terminal -> profile -> profile preferences -> select command from tab bar -> click check run command as login shell
+Restart terminal
+type command
+  rvm list
+~
+ $ rvm list
+
+rvm rubies
+
+=* ruby-2.3.0 [ i686 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+berylsystems@berylsystems-System-Product-Name:~$ 
+

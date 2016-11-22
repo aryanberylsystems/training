@@ -1,0 +1,101 @@
+To install rvm run following command
+ https://rvm.io/rvm/install
+ i use
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+After this two ommands 
+right click on terminal -> profile -> profile preferences -> select command from tab bar -> click check run command as login shell
+Restart terminal
+type command
+  rvm list
+~
+ $ rvm list
+
+rvm rubies
+
+=* ruby-2.3.0 [ i686 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+berylsystems@berylsystems-System-Product-Name:~$ 
+
+
+@@class variable
+@instance varibale
+def method(local variable)
+$global varialbe
+CONSTANT within class or module but not under def.
+puts "#{CONSTANT}"
+
+
+#global variable
+$country_name="India"
+class Country
+  #constant variable
+  PLANET="earth"
+  #class variable
+  @@state_name="uttarakhand"
+    #local variable inside method signature(name)
+    def city(name)
+      #instance variable
+      @city_name=name
+      puts "country name is #$country_name"
+      puts "state name is #@@state_name"
+      puts "city name is #@city_name"
+    end
+end
+#creating object of class Country
+count=Country.new
+#calling method city
+count.city("Dehradun")
+      
+
+note- if global variable is set with no value then it will run also with no error or warning ..
+      to show warning we have to do
+      ruby -w filename.rb
+    
+
+Arithmetic operator
+**
+a=10, b=20
+then
+a**b gives 10 to the power 20
+
+Comparision operator
+<=>
+return 0 is equal
+return -1 if operand is less
+return 1 if operand is greater
+
+.eql?
+1==1.0 is true but 1.eql?(1.0) is false
+
+equals?
+
+===
+(1..10)===5 will return true
+
+Ruby parallel assignment
+a,b,c =10,20,30
+
+
+multilines comments
+=begin
+...
+...
+=end
+
+
+if -else statement
+
+if condition
+elsif condition
+else
+end
+
+
+
+

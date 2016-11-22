@@ -37,7 +37,7 @@
 			</td>
 			<td>
 			<div class="right">	
-				<input type="text" name="dept_id"/>	
+				<input id="dept_id" type="text" name="dept_id" onchange="'document.getElementById(\"dept_id\")./home/berylsystems/Desktop/bootstraplearning/index.htmlvalue.toUpperCase();'" />	
 			</div>	
 			</td>
 		</tr>
@@ -63,8 +63,8 @@
 			<td></td>
 			<td>
 			    <div class="right">	
-				<input id="abc" class="btn_for_dept_save"  type="submit" value="save" name="save_btn" onmouseover= />
-				<input class="btn_for_dept_reset"type="submit" value="Reset"/>
+				<input id="abc" class="btn_for_dept_save"  type="submit" value="save" name="save_btn" onclick="redirect();" />
+				<input id="xyz" class="btn_for_dept_reset" type="submit" value="Reset"  />
 				</div>
 			</td>
 		</tr>
@@ -73,5 +73,3 @@
 	</div>
 		<footer><center>&copy;beryl</center></footer>
 </body>
-
-</html>

@@ -1,0 +1,6 @@
+
+puts "enter your age"
+@numone=gets
+@numone=@numone.to_i
+puts"your age is #@numone"
+
