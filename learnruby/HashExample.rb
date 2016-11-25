@@ -1,10 +1,10 @@
 
 class HashExample
-  @@h1=Hash[1=>"master",2=>"aryan",3=>"gunjack"]	
+  @@h1=Hash["1"=>"master","2"=>"aryan","3"=>"gunjack", "Name" => "Abvcsdfghj", "4" => "retuttf"]
   def print_element_in_hash
    
     puts @@h1[1]
-    
+  
   end
   def keys_in_hash
   	key=@@h1.keys
@@ -80,21 +80,68 @@ class HashExample
   	puts "hash.values_at(key1,key2) will return values at this keys"
     puts @@h1.values_at(8,9)
   end
-  obj=HashExample.new
-  obj.print_element_in_hash
-  obj.keys_in_hash
-  obj.hash_inspect
-  obj.hash_invert
-  obj.hash_keys
-  obj.hash_length
-  obj.hash_merge
-  obj.hash_shift
-  obj.hash_size
-  obj.hash_sort
-  obj.hash_store
-  obj.hash_update_otherhash
-  obj.hash_value
-  obj.hash_values
-  obj.hash_values_at
+  def hash_default
+    puts "return default values of hash"
+    @months = Hash[1=>"aryan"]
+    @months.default="nomonth"
 
+    puts @months.default(key=1) 
+  end
+ AMAN=Hash[1 => "gautam", 2 => "bs1111"]
+  def hash_delete
+  	 @a=Hash[]
+  	 puts @a
+  	 @b=@a.update(AMAN)
+  	 #@new_hash=@@h1.update(@other_hash)
+      puts @b
+      @b.delete(1)
+      puts @b
+      puts AMAN
+      puts AMAN.fetch(3,"fetggg")
+    #puts @@a[1]
+    #@arr=Array.new
+  #   @arr=@@a.delete(1)
+  #   #@@aman << @arr[0]
+  #   puts @@a.inspect
+  #   #puts aman.inspect
+  # end
+  # def hash1
+  # 	puts @@aman
+  end
+  def hash_index
+    puts @@h1.index("gunjack")
+  end
+  def hash_intersection
+     @a = {"a"=>1,"b"=>2,"z"=>3}
+     @b = {"x"=>99,"y"=>88,"z"=>77}
+     @intersection = @a.keys & @b.keys
+     @difference = @a.keys - @b.keys
+     @c = @a.dup.update(@b)
+     print @c
+     print 
+     print @intersection 
+     print ("\n")
+     print @difference 
+  end
+  obj=HashExample.new
+  # obj.print_element_in_hash
+  # obj.keys_in_hash
+  # obj.hash_inspect
+  # obj.hash_invert
+  # obj.hash_keys
+  # obj.hash_length
+  # obj.hash_merge
+  # obj.hash_shift
+  # obj.hash_size
+  # obj.hash_sort
+  # obj.hash_store
+  # obj.hash_update_otherhash
+  # obj.hash_value
+  # obj.hash_values
+   #obj.hash_values_at
+  # obj.hash_default
+  #  obj.hash_delete
+    #obj.hash1
+  #  obj.hash_index
+  obj.hash_intersection
 end
