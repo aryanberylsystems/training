@@ -20,13 +20,15 @@ class ExceptionBasic
       dem=Integer(gets)
       ratio = num/dem
       puts ratio 
-      rescue ZeroDivisionError => oops
-        print(oops)
+      rescue 
+        #print(oops)
         print("\n enter the denominator other than 0..\n ")
         retry                    # control back to start of begin 
       rescue ArgumentError 
         print("enter numeric values only..\n\n")
-        retry      
+        retry 
+        ensure 
+        print("hello")     
      end 
   end
 
