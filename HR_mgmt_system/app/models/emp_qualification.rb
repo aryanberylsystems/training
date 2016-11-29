@@ -1,0 +1,2 @@
+class EmpQualification < ApplicationRecord
+end
