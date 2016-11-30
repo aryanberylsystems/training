@@ -10,6 +10,7 @@ class CreateEmployeeDetails < ActiveRecord::Migration[5.0]
       t.string :emp_address 
       t.string :id_proof_no 
       t.timestamps
+     
     end
   end
 end

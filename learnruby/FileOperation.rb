@@ -18,11 +18,17 @@ class FileOperation
     file.puts "u append this line" 
   end
   def read_and_write
-    file=File.open("file_operation.txt","r+")
+    file=File.open("f.txt","r+")
     puts "content of file is :"
-    puts file.readlines    
-    file.puts "new line"
-    puts "....."  
+     puts file1.readlines
+    
+    file=File.open("f.txt","r+")
+    file.puts "content of file is :"
+    file.puts "new linhfhgfghfe 1hghrtyrty rfgdfgdf fgdfgr"
+    # file1=File.open("f.txt","r+")
+   
+
+   # file.puts "....."  
   end  
   def write_and_read
     file = File.open("file_operation.txt","w+")
@@ -34,6 +40,6 @@ class FileOperation
   # obj.read_file
   # obj.write_in_file
   # obj.append_in_file
-  # obj.read_and_write
+ obj.read_and_write
   #obj.write_and_read
  end      
