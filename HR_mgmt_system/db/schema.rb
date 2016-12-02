@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130111711) do
+ActiveRecord::Schema.define(version: 20161201125515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20161130111711) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "id"
+  end
+
+  create_table "demos", force: :cascade do |t|
+    t.integer  "sumo_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sumo_id"], name: "index_demos_on_sumo_id", using: :btree
   end
 
   create_table "departments", force: :cascade do |t|
@@ -54,7 +62,10 @@ ActiveRecord::Schema.define(version: 20161130111711) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "sumos", force: :cascade do |t|
+    t.string "name"
+  end
+
   add_foreign_key "attendences", "employee_details", column: "id"
   add_foreign_key "emp_qualifications", "employee_details", column: "id"
-  add_foreign_key "employee_details", "departments", column: "dept_id"
 end
