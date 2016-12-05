@@ -1,0 +1,24 @@
+<html>
+<body>
+<%= link_to "home", "/" %>
+
+<table border='1'>
+<tr>
+	<th colspan="2">Deparment Details </th>
+</tr>
+<tr>
+  <th>department id</th>
+  <th>department name </th>
+</tr>  
+  <tr>
+    <% @departments.each do |department| %>
+    <tr>
+    <td>  <%= department.id %> </td>
+    <td> <%= department.name %> </td>
+    </tr>
+    <% end %>
+  </tr>
+  </table>
+  </body>
+  <footer>&copy; training time</footer>
+ </html>

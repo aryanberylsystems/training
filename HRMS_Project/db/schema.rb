@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202131059) do
+ActiveRecord::Schema.define(version: 20161205100303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendences", primary_key: "emp_id", id: :integer, default: -> { "nextval('attendences_id_seq'::regclass)" }, force: :cascade do |t|
-    t.date     "date_of_day"
-    t.time     "time_of_entrance"
-    t.time     "time_of_exit"
+  create_table "attendences", force: :cascade do |t|
+    t.integer  "employee_detail_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "present_or_absent"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "date_and_time_of_entrance"
+    t.datetime "date_and_time_of_exit"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20161202131059) do
     t.string   "id_type"
   end
 
-  create_table "employee_qualifications", force: :cascade do |t|
+  create_table "employee_qualifications", primary_key: "employee_detail_id", id: :integer, default: -> { "nextval('employee_qualifications_id_seq'::regclass)" }, force: :cascade do |t|
     t.decimal  "high_school_percantage"
     t.decimal  "intermediate_per"
     t.string   "graduation_course"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20161202131059) do
     t.datetime "updated_at",               null: false
   end
 
-  add_foreign_key "attendences", "employee_details", column: "emp_id"
   add_foreign_key "employee_details", "departments"
-  add_foreign_key "employee_qualifications", "employee_details", column: "id"
+  add_foreign_key "employee_qualifications", "employee_details"
 end

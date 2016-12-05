@@ -1,0 +1,30 @@
+<%= link_to "home", "/" %>
+<h2> Qualification </h2>
+<table border='1'>
+<tr>
+	<th colspan="7">Qualification Details </th>
+</tr>
+  <tr>
+    <th>employee id</th>
+    <th> high_school_percentage</th>
+    <th>intermediate_percentage</th>
+    <th>graduation_course</th>
+    <th>graduation_percantage</th>
+    <th>passing_year</th>
+    <th>any_other_course_specify</th>
+    
+  </tr>
+  <tr>
+    <% @qualifications.each do |qualification| %>
+    <tr>
+      <td><%= qualification.employee_detail_id %></td>
+      <td><%= qualification.high_school_percantage %></td>
+      <td><%= qualification.intermediate_per %></td>
+      <td><%= qualification.graduation_course %></td>
+      <td><%= qualification.graduation_percantage %></td>
+      <td><%= qualification.passing_year %></td>
+      <td><%= qualification.any_other_course_specify %></td>
+   </tr>
+   <% end %>
+  </tr>
+ </table>
