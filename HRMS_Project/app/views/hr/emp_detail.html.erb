@@ -1,4 +1,7 @@
-<%= link_to "home", "/" %>
+<%= link_to "home", "/" %> ||
+<%= link_to "add new employee", "/add_employee" %> 
+
+<hr/>
 <table border='1'>
 <tr>
 	<th colspan="9">Employee Details </th>
@@ -13,6 +16,7 @@
     <th>address</th>
     <th>id_type </th>
     <th>id_proof_no</th>
+    <th> </th>
   
   </tr>
   <tr> 
@@ -27,7 +31,9 @@
       <td><%= detail.address %></td>
       <td><%= detail.id_type%></td>
       <td><%= detail.id_proof_no%></td>
+      <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_employee?id=#{detail.id}",method: 'delete' %></td>
     </tr>
   <% end %>
+
  </tr>
  </table>
