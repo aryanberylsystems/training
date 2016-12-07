@@ -16,8 +16,7 @@
     <tr>
     <td>  <%= department.id %> </td>
     <td> <%= department.name %> </td>
-   <td> <%= link_to "edit", "/edit_department" %> || 
-    <%= link_to "delete", "/delete_department" %></td>
+    <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_department?id=#{department.id}",method: 'delete' %></td>
     </tr>
     
     <% end %>

@@ -1,8 +1,7 @@
 <%= link_to "home", "/" %>
 <h2> Qualification </h2>
-<%= link_to "add employee qualifcation", "/add_qualification" %> ||
-<%= link_to "edit row", "/edit_employee_qualification" %> ||
-<%= link_to "delete row", "/delete_emp_qualification" %> ||
+<%= link_to "add employee qualifcation", "/qualification/new" %> ||
+
 <table border='1'>
 <tr>
 	<th colspan="7">Qualification Details </th>
@@ -27,6 +26,9 @@
       <td><%= qualification.graduation_percantage %></td>
       <td><%= qualification.passing_year %></td>
       <td><%= qualification.any_other_course_specify %></td>
+      <td> <%= link_to "edit", "/edit_qualification" %> || 
+    <%= link_to "delete", "/delete_qualification?employee_detail_id=#{qualification.employee_detail_id}",method: 'delete' %></td>
+
    </tr>
    <% end %>
   </tr>

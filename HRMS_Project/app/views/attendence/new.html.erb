@@ -1,0 +1,8 @@
+<%= form_for @attendence, url: "attendence/create" do |attendence| %>
+  <label> date_and_time_of_entrance(yyyy:mm:dd hh:mm:ss) </label>
+  <%= attendence.text_field :date_and_time_of_entrance %><br />
+
+  <%#= employee.label :last_name %>:
+  <%= attendence.collection_select(:employee_detail_id, @employees, :id, :first_name) %>
+  <%= attendence.submit "create" %>
+<% end %>

@@ -1,4 +1,5 @@
 <%= link_to "home", "/" %>
+<h2>Attendence</h2>
 <%= link_to "add employee attendence", "/add_attendence" %>
 <center>
 <table border='1'>
@@ -16,6 +17,7 @@
       <td><%= attendence.employee_detail_id %></td>
       <td><%= attendence.date_and_time_of_entrance %></td>
       <td><%= attendence.date_and_time_of_exit %></td>
+      <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_attendence?id=#{attendence.employee_detail_id}",method: 'delete' %></td>
     </tr>
   
      <% end %>

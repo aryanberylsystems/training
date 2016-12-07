@@ -12,7 +12,7 @@
     <th>last_name</th>
     <th>email_id </th>
     <th>contact number</th>
-    <th>deapartment id</th>
+    <th>department id</th>
     <th>address</th>
     <th>id_type </th>
     <th>id_proof_no</th>
@@ -28,7 +28,7 @@
       <td><%= detail.email_id%></td>
       <td><%= detail.contact_no%></td>
       <td><%= detail.department_id%></td>
-      <td><%= detail.address %></td>
+      <td><%= detail.address%></td>
       <td><%= detail.id_type%></td>
       <td><%= detail.id_proof_no%></td>
       <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_employee?id=#{detail.id}",method: 'delete' %></td>

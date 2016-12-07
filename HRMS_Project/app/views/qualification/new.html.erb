@@ -1,0 +1,9 @@
+<%= form_for @qualification, url: "/create/emp_q" do |emp_q| %>
+  <label> high school % </label>
+  <%= emp_q.text_field :high_school_percantage %><br />
+  <label> emp_id </label>
+  <%#= emp_q.text_field :employee_detail_id %>
+  <%#= employee.label :last_name %>
+  <%= emp_q.collection_select(:employee_detail_id, @emp, :id, :id) %>
+  <%= emp_q.submit "create" %>
+<% end %>
