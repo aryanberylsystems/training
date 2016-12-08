@@ -1,0 +1,10 @@
+<%= form_for @department, url: "/new_department" do |department| %>
+  <label> id </label>
+  <%= department.text_field :id %><br />
+  <label>name</label>
+  <%= department.text_field :name %><br />
+
+  <%#= employee.label :last_name %>:
+  <%= department.collection_select(:employee_detail_id, @employees, :id, :first_name) %>
+  <%= department.submit "create" %>
+<% end %>

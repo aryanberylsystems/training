@@ -1,0 +1,9 @@
+<%= form_for @edit_qualification, url: "/edit_qualification" do |edit_qualification| %>
+  <label> high school % </label>
+  <%= edit_qualification.text_field :high_school_percantage %><br />
+  <label> emp_id </label>
+  <%#= emp_q.text_field :employee_detail_id %>
+  <%#= employee.label :last_name %>
+  <%#= edit_qualification.collection_select(:employee_detail_id, @emp, :id, :id) %>
+  <%= edit_qualification.submit "update" %>
+<% end %>

@@ -27,11 +27,11 @@
       <td><%= detail.last_name%></td>
       <td><%= detail.email_id%></td>
       <td><%= detail.contact_no%></td>
-      <td><%= detail.department_id%></td>
+      <td><%= detail.department.name%></td>
       <td><%= detail.address%></td>
       <td><%= detail.id_type%></td>
       <td><%= detail.id_proof_no%></td>
-      <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_employee?id=#{detail.id}",method: 'delete' %></td>
+      <td> <%= link_to "edit", "/edit_employee?id=#{detail.id}" %> || <%= link_to "delete", "/delete_employee?id=#{detail.id}",method: 'delete' %></td>
     </tr>
   <% end %>
 

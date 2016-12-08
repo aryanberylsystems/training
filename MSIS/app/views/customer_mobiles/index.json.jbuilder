@@ -1,0 +1,1 @@
+json.array! @customer_mobiles, partial: 'customer_mobiles/customer_mobile', as: :customer_mobile

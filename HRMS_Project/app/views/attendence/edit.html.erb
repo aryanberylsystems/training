@@ -1,0 +1,13 @@
+<%= form_for @edit_attendence, url: "/update_attendence",method: :put do |edit_attendence| %>
+<%= edit_attendence.hidden_field :id %>
+  <%= edit_attendence.label :first_name %><br/>
+  <%= edit_attendence.collection_select(:employee_detail_id, @employees, :id, :first_name) %><br/><br/>
+
+  <label> date_and_time_of_entrance(yyyy:mm:dd hh:mm:ss) </label><br/>
+  
+  <%= edit_attendence.text_field :date_and_time_of_entrance %><br /><br/>
+
+  <%= edit_attendence.label :date_and_time_of_exit %> <br/>
+  <%= edit_attendence.text_field :date_and_time_of_exit %><br /><br/> 
+ <%= edit_attendence.submit "update" %>
+<% end %>

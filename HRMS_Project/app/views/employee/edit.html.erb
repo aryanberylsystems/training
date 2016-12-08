@@ -1,0 +1,31 @@
+<%= form_for @edit_employee,url: "/update_employee",method: :put   do |edit_employee| %>
+<%#= form_for @edit_employee,url: {action: "update"} do |edit_employee| %>
+  <%= edit_employee.hidden_field :id %>
+  
+  <%= edit_employee.label :first_name %><br/>
+  <%= edit_employee.text_field :first_name %><br />
+  
+  <%= edit_employee.label :last_name %><br/>
+  <%= edit_employee.text_field :last_name %><br />
+  
+  <%= edit_employee.label :email_id %><br/>
+  <%= edit_employee.text_field :email_id %><br />
+  
+  <%= edit_employee.label :contact_no %><br/>
+  <%= edit_employee.text_field :contact_no %><br />
+
+  <%= edit_employee.label :department %><br/>
+  <%= edit_employee.collection_select(:department_id, @departments, :id, :name) %><br/>
+
+  <%= edit_employee.label :address %><br/>
+  <%= edit_employee.text_field :address %><br />
+
+  <%= edit_employee.label :id_proof_type %><br/>
+  <%= edit_employee.text_field :id_type %><br />
+
+   <%= edit_employee.label :id_proof_no %><br/>
+  <%= edit_employee.text_field :id_proof_no %><br />
+  <%#= employee.label :last_name %>
+  
+  <%= edit_employee.submit "edit" %>
+<% end %>

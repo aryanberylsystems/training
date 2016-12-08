@@ -7,6 +7,7 @@
  	<th colspan="3">Attendence</th>
  </tr>
   <tr>
+     <th>id</th>
     <th>emp_id</th>
     <th> date and time of entrance</th>
     <th> date and time of exit</th>
@@ -14,10 +15,11 @@
   <tr>  
      <% @attendences.each do |attendence| %>
     <tr>
+      <td><%= attendence.id%></td>
       <td><%= attendence.employee_detail_id %></td>
       <td><%= attendence.date_and_time_of_entrance %></td>
       <td><%= attendence.date_and_time_of_exit %></td>
-      <td> <%= link_to "edit", "/" %> || <%= link_to "delete", "/delete_attendence?id=#{attendence.employee_detail_id}",method: 'delete' %></td>
+      <td> <%= link_to "edit", "/edit_attendence?id=#{attendence.id}" %> || <%= link_to "delete", "/delete_attendence?id=#{attendence.id}",method: 'delete' %></td>
     </tr>
   
      <% end %>

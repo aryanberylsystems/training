@@ -7,8 +7,11 @@ class QualificationController < ApplicationController
   def create
     @qualification = EmployeeQualification.create(employee_detail_id: params[:employee_qualification][:employee_detail_id], high_school_percantage: params[:employee_qualification][:high_school_percantage])
     redirect_to '/emp_qualification'
-
+  end
+  def edit
+    @edit_qualification = EmployeeQualification.find(params[:id])
+  end
     	
   	
-  end
+  
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_mode: MyString
+  payment_detail: MyString
+  price: 1
+  selling_date: 2016-12-08 16:47:24
+
+two:
+  payment_mode: MyString
+  payment_detail: MyString
+  price: 1
+  selling_date: 2016-12-08 16:47:24

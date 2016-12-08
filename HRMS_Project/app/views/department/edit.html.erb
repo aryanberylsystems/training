@@ -1,0 +1,12 @@
+<%= form_for @edit_department, url: "/edit_department" do |department| %>
+  
+  <%#= department.collection_select(:employee_detail_id, @employees, :id, :first_name) %>
+  <!-- <label> id </label> -->
+  <%#= department.text_field :id %><br />
+  <label>name</label>
+  <%= department.text_field :name %><br />
+
+  <%#= employee.label :last_name %>:
+ 
+  <%= department.submit "update" %>
+<% end %>
