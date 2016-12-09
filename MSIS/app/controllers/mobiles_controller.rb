@@ -10,21 +10,27 @@ class MobilesController < ApplicationController
   # GET /mobiles/1
   # GET /mobiles/1.json
   def show
+
   end
 
   # GET /mobiles/new
   def new
     @mobile = Mobile.new
+    @brands = Brand.all
   end
 
   # GET /mobiles/1/edit
   def edit
+     @brands = Brand.all
+
+
   end
 
   # POST /mobiles
   # POST /mobiles.json
   def create
     @mobile = Mobile.new(mobile_params)
+    @brands = Brand.all
 
     respond_to do |format|
       if @mobile.save

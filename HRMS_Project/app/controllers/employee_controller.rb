@@ -38,7 +38,7 @@ class EmployeeController < ApplicationController
   	# redirect_to '/emp_detail'
   	
   end
-
+  private
   def emp_params
     params.require(:employee_detail).permit(:first_name, :last_name, :email_id, :contact_no, :department_id, :address, :id_type, :id_proof_no)
 

@@ -21,7 +21,7 @@
         <td><%= mobile.manufacturing_date %></td>
         <td><%= mobile.price %></td>
         <td><%= mobile.imei %></td>
-        <td><%= mobile.brand %></td>
+        <td><%= mobile.brand.name %></td>
         <td><%= link_to 'Show', mobile %></td>
         <td><%= link_to 'Edit', edit_mobile_path(mobile) %></td>
         <td><%= link_to 'Destroy', mobile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
