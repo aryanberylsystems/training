@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Qualifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>High school percentage</th>
+      <th>Intermediate percentage</th>
+      <th>Graduation course</th>
+      <th>Graduation percentage</th>
+      <th>Graduation passing year</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualifications.each do |qualification| %>
+      <tr>
+        <td><%= qualification.employee.name %></td>
+        <td><%= qualification.high_school_percentage %></td>
+        <td><%= qualification.intermediate_percentage %></td>
+        <td><%= qualification.graduation_course %></td>
+        <td><%= qualification.graduation_percentage %></td>
+        <td><%= qualification.graduation_passing_year %></td>
+        
+        <td><%= link_to 'Show', qualification %></td>
+        <td><%= link_to 'Edit', edit_qualification_path(qualification) %></td>
+        <td><%= link_to 'Destroy', qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qualification', new_qualification_path %>

@@ -1,0 +1,47 @@
+<%= form_for(qualification) do |f| %>
+  <% if qualification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+
+      <ul>
+      <% qualification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :employee_name %>
+    <%= f.collection_select :employee_id, @employees, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :high_school_percentage %>
+    <%= f.text_field :high_school_percentage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intermediate_percentage %>
+    <%= f.text_field :intermediate_percentage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation_course %>
+    <%= f.text_field :graduation_course %>
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation_percentage %>
+    <%= f.text_field :graduation_percentage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation_passing_year %>
+    <%= f.number_field :graduation_passing_year %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

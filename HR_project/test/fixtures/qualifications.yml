@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  high_school_percentage: 9.99
+  intermediate_percentage: 9.99
+  graduation_course: MyString
+  graduation_percentage: 9.99
+  graduation_passing_year: 1
+  employee: one
+
+two:
+  high_school_percentage: 9.99
+  intermediate_percentage: 9.99
+  graduation_course: MyString
+  graduation_percentage: 9.99
+  graduation_passing_year: 1
+  employee: two

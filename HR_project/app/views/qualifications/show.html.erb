@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Employee:</strong>
+  <%= @qualification.employee.name %>
+</p>
+<p>
+  <strong>High school percentage:</strong>
+  <%= @qualification.high_school_percentage %>
+</p>
+
+<p>
+  <strong>Intermediate percentage:</strong>
+  <%= @qualification.intermediate_percentage %>
+</p>
+
+<p>
+  <strong>Graduation course:</strong>
+  <%= @qualification.graduation_course %>
+</p>
+
+<p>
+  <strong>Graduation percentage:</strong>
+  <%= @qualification.graduation_percentage %>
+</p>
+
+<p>
+  <strong>Graduation passing year:</strong>
+  <%= @qualification.graduation_passing_year %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_qualification_path(@qualification) %> |
+<%= link_to 'Back', qualifications_path %>

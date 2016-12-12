@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email_id: MyString
+  contact_no: MyString
+  joining_date: 2016-12-12
+  address: MyText
+  id_proof_type: MyString
+  id_proof_no: MyString
+  department: one
+
+two:
+  name: MyString
+  email_id: MyString
+  contact_no: MyString
+  joining_date: 2016-12-12
+  address: MyText
+  id_proof_type: MyString
+  id_proof_no: MyString
+  department: two

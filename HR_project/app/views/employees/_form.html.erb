@@ -1,0 +1,57 @@
+<%= form_for(employee) do |f| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email_id %>
+    <%= f.text_field :email_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact_no %>
+    <%= f.text_field :contact_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :joining_date %>
+    <%= f.date_select :joining_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_proof_type %>
+    <%= f.text_field :id_proof_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_proof_no %>
+    <%= f.text_field :id_proof_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :department_name %>
+    <%= f.collection_select(:department_id, @departments, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

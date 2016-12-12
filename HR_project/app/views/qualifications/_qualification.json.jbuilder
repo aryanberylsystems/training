@@ -1,0 +1,2 @@
+json.extract! qualification, :id, :high_school_percentage, :intermediate_percentage, :graduation_course, :graduation_percentage, :graduation_passing_year, :employee_id, :created_at, :updated_at
+json.url qualification_url(qualification, format: :json)
